@@ -14,3 +14,10 @@
   )
   restaurant.save!
 end
+
+3.times do
+  blog = Blog.new(
+    article: 'food is great'
+  )
+  blog.save!
+end

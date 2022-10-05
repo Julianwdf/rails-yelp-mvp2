@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :reviews, only: [:index, :new, :create]
   end
+
+  resources :blogs
   # Defines the root path route ("/")
   # root "articles#index"
 end
