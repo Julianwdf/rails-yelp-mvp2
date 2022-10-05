@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_10_04_115104) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -23,7 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_115104) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "content"
-    t.integer "restaurant_id", null: false
+    t.bigint "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
